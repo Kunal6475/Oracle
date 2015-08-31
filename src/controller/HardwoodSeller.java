@@ -3,13 +3,14 @@
  */
 package controller;
 
-import model.WoodItem;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.io.IOException;
+import model.WoodItem;
 
 /**
  * @author Esteban
@@ -77,9 +78,6 @@ public class HardwoodSeller {
 		buyerName=customerDetailsArray[0];
 		buyerAddress=customerDetailsArray[1];
 		purchaseDate=customerDetailsArray[2];
-		System.out.println(buyerName);
-		System.out.println(buyerAddress);
-		System.out.println(purchaseDate);
 	}
 	
 	private void setOrderStringList(String orderLine)
@@ -92,7 +90,8 @@ public class HardwoodSeller {
 		setOrderList();
 	}
 	
-	private void setOrderList()
+
+private void setOrderList()
 	{
 		orderList=new ArrayList<WoodItem>();
 		for (String orderString : orderStringList)
@@ -105,28 +104,28 @@ public class HardwoodSeller {
 		}
 	}
 	
-	private void printOrderDetails()
+private void printOrderDetails()
+{
+	double totalPrice=0;
+	double deliveryTime=0;
+	System.out.println("Buyer Name: " + buyerName);
+	System.out.println("Delivery Address: " + buyerAddress);
+	System.out.println("The order details are as follows: ");
+	for (WoodItem item : orderList)
 	{
-		double totalPrice=0;
-		double deliveryTime=0;
-		System.out.println("Buyer Name: " + buyerName);
-		System.out.println("Delivery Address: " + buyerAddress);
-		System.out.println("The order details are as follows: ");
-		for (WoodItem item : orderList)
+		System.out.print("WoodType : " + item.getType() + " ; ");
+		System.out.print(" Quantity purchased : " + item.getQuantity() +"BF" + " ; ");
+		System.out.println(" Price : $" + item.getTotalPrice());
+		totalPrice=totalPrice+ item.getTotalPrice();
+		if (deliveryTime<item.getDeliveryTime())
 		{
-			System.out.print("WoodType : " + item.getType() + " ; ");
-			System.out.print(" Quantity purchased : " + item.getQuantity() +"BF" + " ; ");
-			System.out.println(" Price : $" + item.getTotalPrice());
-			totalPrice=totalPrice+ item.getTotalPrice();
-			if (deliveryTime<item.getDeliveryTime())
-			{
-				deliveryTime=item.getDeliveryTime();
-			}
+			deliveryTime=item.getDeliveryTime();
 		}
-		System.out.println("The estimated delivery time is : " + deliveryTime + "hours");
-		System.out.println("The total price is : $" + totalPrice);
 	}
-	
+	System.out.println("The estimated delivery time is : " + deliveryTime + "hours");
+	System.out.println("The total price is : $" + totalPrice);
+}
+
 	public Double deliveryTime(){
 		Double deliveryETA = 0.0;
 		return deliveryETA;
