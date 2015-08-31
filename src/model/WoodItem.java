@@ -37,6 +37,11 @@ public class WoodItem {
 		this.price = price;
 	}
 	
+	/**
+	 * Constructor of WoodItem elements with parameter
+	 * @param type Name of the wood type
+	 * @param quantity Quantity of the woodtype which is ordered.
+	 */
 	public WoodItem(String type,Double quantity)
 	{
 		this.type=type;
@@ -46,6 +51,7 @@ public class WoodItem {
 		setDeliveryTime();
 	}
 
+	// Function for setting the base delivery time and price as per the woodtype that is oredered.
 	private void SetBaseDeliveryTimePrice(String type)
 	{
 	  switch(type)
@@ -76,11 +82,13 @@ public class WoodItem {
 		}
 	}
 	
+	// Function for setting the total price.
 	private void setTotalPrice()
 	{
 		this.totalPrice=this.quantity*this.price;
 	}
 	
+	// Function for setting the delivery time as per the quantity ordered.
 	private void setDeliveryTime()
 	{
 		if ((1<=quantity) && (quantity<=100))
