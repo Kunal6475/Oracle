@@ -18,10 +18,19 @@ import model.WoodItem;
  */
 public class HardwoodSeller {
 
+	// Buyer Name variable
 	private String buyerName;
+	
+	// Buyer  Address
 	private String buyerAddress;
+	
+	// Date of purchase variable
 	private String purchaseDate;
+	
+	// List which contains order in string format. e.g. woodtype:amount
 	private List<String> orderStringList;
+	
+	// List of WoodItems that is ordered
 	private List<WoodItem> orderList;
 	/**
 	 * @param args
@@ -37,6 +46,7 @@ public class HardwoodSeller {
      hardwoodSellerObj.printOrderDetails();
 	}
 	
+	// The function for reading the input file and extracting the data from it.
 	public void readInputFile(String inputFilePath){
 		String customerDetails;
 		BufferedReader buffer=null;
@@ -72,6 +82,7 @@ public class HardwoodSeller {
 			}
 		}
 	
+	// Function for setting the customer details in the customer related variables.
 	private void setCustomerDetails(String customerDetails)
 	{
 		String[] customerDetailsArray=customerDetails.split(";");
@@ -80,6 +91,7 @@ public class HardwoodSeller {
 		purchaseDate=customerDetailsArray[2];
 	}
 	
+	// Function for setting the List of Order Strings.
 	private void setOrderStringList(String orderLine)
 	{
 		String[] OrderLineArray=orderLine.split(";");
@@ -90,7 +102,7 @@ public class HardwoodSeller {
 		setOrderList();
 	}
 	
-
+// Function for setting the order related details in the order list.
 private void setOrderList()
 	{
 		orderList=new ArrayList<WoodItem>();
@@ -104,6 +116,7 @@ private void setOrderList()
 		}
 	}
 	
+// Function for printing out the order details.
 private void printOrderDetails()
 {
 	double totalPrice=0;
