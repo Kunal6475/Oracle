@@ -1,0 +1,20 @@
+12.(a) 4 commits have been made to repository in total.
+       One for removeing REMOVE.txt file and adding information in README.txt file.
+       One for adding book.txt file.
+       One for sending the modified content of book.txt file.
+       One for adding answers.txt file.
+12.(b).gitignore file was last modified on Sep  2 01:27.
+12.(c)The files that were present in repository on 08/21/2015 are as follows:
+       -.gitattributes
+       -.classpath
+       -.gitignore
+       - README.txt
+       -WoodItem.java
+       -HardWoodSeller.java
+12.(d)HardWoodSeller.java file in src folder was modified one time.
+      WoodItem.java file in src folder was modified two times.
+12.(e)git log gives committed project history whereas git status displays the state of the working directory and the staging area.
+12.(f)git log main.java  command would let us see the commits where "main.java" was one of the committed files.
+12.(g)git log --grep="transaction" command will let us see the commits where "transaction" was in the commit message.
+12.(h)git log --author="Lauren" --after="01/04/2014" --before="07/15/2015" command will let us see the commits made by Lauren between 01/05/2014 and "06/14/2015" if both dates are inclusive.
+     This is on the basis both days are inclusive.
